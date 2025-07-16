@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>電卓アプリ</title>
+    <meta charset = "UTF-8">
+</head>
+<body>
+	<h1>電卓アプリ</h1>
+	<form action = "/calculate" method = "post">
+		<input type ="number" name = "num1" step = "any" required>
+		<select name ="operator">
+			<option>+</option>
+			<option>-</option>
+			<option>*</option>
+			<option>/</option>
+		</select>
+		<input type ="number" name = "num2" step = "any" required>
+		<button type ="submit">計算</button>
+	</form>
+	
+	
+	<p th:if="${result}" th:text="'結果:'+${result}"></p>
+	<p th:if="${error}" th:text="${error}" style="color:red" ></p>
+</body>
+</html>
